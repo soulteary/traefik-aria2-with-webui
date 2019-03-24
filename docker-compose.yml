@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+
+  web:
+    container_name: web
+    image: ${WEBUI_IMAGE}
+    expose:
+      - 8888
+    networks:
+      - traefik
+    environment:
+      - WEB_PROXY=http://aria2:6800
+      - WS_PROXY=ws://aria2:6800
+    labels:
+      - "traefik.enable=true"
+      - "traefik.port=8888"
+      - "traefik.frontend.rule=Host:${BIND_HOSTS}"
+      - "traefik.frontend.entryPoints=http,https,ws,wss"
+
+  aria2:
+    container_name: aria2
+    image: ${ARIA2_IMAGE}
+    volumes:
+      - ./downloads:/downloads
+    expose:
+      - 6800
+    networks:
+      - traefik
+    labels:
+      - "traefik.enable=false"
+
+networks:
+  traefik:
+    external: true
