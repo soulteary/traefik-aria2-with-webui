@@ -6,8 +6,7 @@ ADD webui-aria2/package-lock.json /app/package-lock.json
 
 WORKDIR /app
 
-RUN npm install -g yarn --registry=http://r.cnpmjs.org && \
-    yarn --registry=http://r.cnpmjs.org
+RUN npm install -g yarn && yarn
 
 ADD webui-aria2/ /app
 
