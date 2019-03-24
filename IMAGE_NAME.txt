@@ -1,1 +1,1 @@
-docker.lab.com/download.lab.com:fb9d758d
+soulteary/traefik-aria2-with-webui

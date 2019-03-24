@@ -4,7 +4,7 @@ Aria2 with WebUI and Traefik.
 
 ## Usage
 
-Just use `docker-compose up`, and visit `YOUR_`.
+Edit `BIND_HOSTS` in `.env` file, and use `docker-compose up`, and visit it.
 
 ## List of technical (ALL OPEN SOURCE)
 
