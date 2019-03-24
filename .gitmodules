@@ -1,0 +1,3 @@
+[submodule "webui-aria2"]
+	path = webui-aria2
+	url = https://github.com/soulteary/webui-aria2
